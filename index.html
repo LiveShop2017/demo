@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>视频</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="dns-prefetch" href="//www.wiung.com">
+    <meta name="apple-mobile-web-app-title" content="视频">
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="keywords" content="视频" />
+    <meta name="description" content="视频" />
+</head>
+
+<body>
+    <div style="text-align: center;width:100%;height:100%">
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/cover.jpg" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/top.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/1.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/1.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/2.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/2.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/3.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/3.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/4.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/4.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/5.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/5.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/6.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/6.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/7.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/7.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/8.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/8.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/d1.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/d1.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/d2.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/d2.mp4" type="video/mp4">
+        </video>
+        <br>
+        <video id="videoPlay" class="video" autoplay="autoplay" playsinline="true" preload="auto" poster="./i001/d3.png" width="100%"
+            style="text-align: -webkit-center; margin: 0 auto;" controls="">
+            <source src="http://meijia.pounsu.shop/v001/d3.mp4" type="video/mp4">
+        </video>
+    </div>
+</body>
+<script>
+    (function () {
+        //触屏即加载音乐
+
+        // document.addEventListener('touchstart', function() {undefined
+        // document.getElementById('media').play()
+        // }
+
+        //进入微信页面即加载
+        // document.addEventListener('WeixinJSBridgeReady', function() {undefined
+        // document.getElementById('videoPlay').play()
+        // })     
+
+        var voice = document.getElementById('videoPlay');
+        if (typeof WeixinJSBrdgeReady == "object" && typeof WeixinJSBridge.invoke == "function") {
+            voice.play()
+        } else {
+            if (document.addEventListener) {
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    voice.play();
+                }, false);
+            } else if (document.attachEvent) {
+                document.attachEvent("WeixinJSBridgeReady", function () {
+                    voice.play();
+                });
+                document.attachEvent("onWeixinJSBridgeReady", function () {
+                    voice.play();
+                });
+            }
+        }
+    })
+</script>
+
+</html>
